@@ -1,12 +1,12 @@
 from __future__ import print_function
 
 ###########################################################################################################################
-# Title: IDC Classification DevCloud Trainer
+# Title:            IDC Classification DevCloud Trainer
 # Description:      Trains a custom Inception V3 model for classification of invasive ductal carcinoma (IDC).
 # Acknowledgements: Uses code from chesterkuo imageclassify-movidius (https://github.com/chesterkuo/imageclassify-movidius)
 #                   Uses data from paultimothymooney Predict IDC in Breast Cancer Histology Images (Kaggle)
 # Config:           Configuration can be found in model/confs.json
-# Last Modified:    2018-04-21
+# Last Modified:    2018-08-07
 ############################################################################################################################
 
 ############################################################################################
