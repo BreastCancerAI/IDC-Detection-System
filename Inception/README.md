@@ -1,6 +1,6 @@
 # IDC Classifier
 
-![IDC Classifier](images/IDC-Classification.jpg)
+![IDC Classifier](../images/IDC-Classification.jpg)
 
 ## Introduction
 
@@ -84,7 +84,7 @@ Next you will need to install the **NCSDK** on your **Raspberry Pi 3** / **UP Sq
 
 You will need to clone this repository to a location on your development terminal. Navigate to the directory you would like to download it to and issue the following commands.
 
-    $ git clone https://github.com/BreastCancerAI/IDC-Classifier.git
+  $ git clone https://github.com/BreastCancerAI/IDC-Classifier.git
 
 Once you have the repo, you will need to find the files in this folder located in [BreastCancerAI/IDC-Classifier](https://github.com/BreastCancerAI/IDC-Classifier "BreastCancerAI/IDC-Classifier").
 
@@ -208,7 +208,7 @@ python3.5 Classifier.py Facenet
 Once the graph has been compiled a testing program will start.  In my **IDC** example there are two classes 0 and 1 (**IDC negative** & **IDC positive**), a classification of 0 shows that the AI thinks the image is not IDC positive, and a classification of 1 is positive.
 
 ```
-!! Welcome to the Intel AI DevJam Classifier, please wait while the program initiates !!
+!! Welcome to the IDC Classifier, please wait while the program initiates !!
 
 -- Running on Python 3.5.2 (default, Nov 23 2017, 16:37:01)
 [GCC 5.4.0 20160609]
@@ -357,7 +357,7 @@ This will send a positive and negative histology slides and test faces to the Ra
 
 # DISCLAIMER
 
-The purpose of the tutorial and source code for **Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT** is to help people learn how to create computer vision projects and for people interested in the medical use case evaluate if it may help them and to expand upon. Although the the program is fairly accurate in testing, this project is not meant to be an alternative for use instead of seeking professional help. I am a developer not a doctor or expert on cancer.
+The purpose of the tutorial and source code for **IDC Classifier** is to help people learn how to create computer vision projects and for people interested in the medical use case evaluate if it may help them and to expand upon. Although the the program is fairly accurate in testing, this project is not meant to be an alternative for use instead of seeking professional help. I am a developer not a doctor or expert on cancer.
 
 - **Acknowledgement:** Uses code from Intel® **movidius/ncsdk** ([movidius/ncsdk Github](https://github.com/movidius/ncsdk "movidius/ncsdk Github"))
 - **Acknowledgement:** Uses code from chesterkuo **imageclassify-movidius** ([imageclassify-movidius Github](https://github.com/chesterkuo/imageclassify-movidius "imageclassify-movidius Github"))
