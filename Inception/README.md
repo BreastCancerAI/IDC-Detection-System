@@ -322,6 +322,7 @@ This will send a positive and negative histology slides and test faces to the Ra
 -- Sending model/test/positive.png
 {'Response': 'OK', 'ResponseMessage': 'IDC Detected!', 'Results': 1}
 ```
+```
 !! Welcome to Intel AI DevJam Classification Server, please wait while the program initiates !!
 
 -- Running on Python 3.5.2 (default, Nov 23 2017, 16:37:01)
@@ -351,8 +352,6 @@ This will send a positive and negative histology slides and test faces to the Ra
 -- TESTED:  1
 -- IDENTIFIED:  1
 -- TIME(secs): 2.423848867416382
-
-###.###.#.## - - [09/Jun/2018 20:28:42] "POST /api/IDC/infer HTTP/1.1" 200 -
 
 ```
 
