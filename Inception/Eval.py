@@ -29,10 +29,6 @@
 # Config:           Configuration can be found in required/confs.json
 # Last Modified:    2018-08-07
 #
-#    CLASSIFIER MODE:
-#
-#       Classifier & IoT JumpWay configuration can be found in data/confs.json
-#
 #    Example Usage:
 #
 #        $ python3.5 Eval.py

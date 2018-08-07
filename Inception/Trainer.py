@@ -31,15 +31,10 @@ from __future__ import print_function
 # Config:           Configuration can be found in required/confs.json
 # Last Modified:    2018-08-07
 #
-#    Commandline Arguments:
+# Usage:
 #
-#        - DataSort: Loads and prepares training data from model/train/1 & model/train/0
-#        - Train: Trains the model
-#
-#    Usage:
-#
-#        $ python3.5 Trainer.py DataSort
-#        $ python3.5 Trainer.py Train
+# $ python3.5 Trainer.py DataSort
+# $ python3.5 Trainer.py Train
 #
 ############################################################################################
 
