@@ -1,4 +1,0 @@
-JumpWayMQTT
-requests
-flask
-dlib

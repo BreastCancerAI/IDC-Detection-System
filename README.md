@@ -8,11 +8,11 @@ The **IDC Classifier** is an open source **computer vision** program created to 
 
 The dataset used with the IDC classifer is an open dataset: [Breast Histopathology Images](https://www.kaggle.com/paultimothymooney/breast-histopathology-images "Breast Histopathology Images") on [Kaggle](https://www.kaggle.com "Kaggle") by [Paul Mooney](https://www.kaggle.com/paultimothymooney "Paul Mooney").
 
-For **classification/inference** the project uses the **Intel® Movidius™ Neural Compute Stick**, a USB stick designed to accelerate computer vision on the edge.
+For **classification/inference** the project uses the **Intel® Movidius™ Neural Compute Stick**, a USB stick designed to accelerate computer vision on the edge. We use the **UP Squared** IoT development board for our IoT device in conjuction with the Movidius. 
 
 To read a technical article article about the IDC Classifier, please visit [Machine Learning and Mammography](https://software.intel.com/en-us/articles/machine-learning-and-mammography "Machine Learning and Mammography") on Intel AI Academy documentation.
 
-![Intel® Movidius](images/ICML-AI-DevJam.jpg)
+![Intel AI DevJam](images/ICML-AI-DevJam.jpg)
 
 The **Intel AI DevJam Demo** project, **Reducing False Negatives in the IDC Classifier**, provides the source codes and tutorials for setting up the project that was demonstrated at **Intel AI DevJam** at **ICML** (**International Conference on Machine Learning**) in **Sweden**, July 2018.
 
