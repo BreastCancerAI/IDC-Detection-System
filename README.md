@@ -10,15 +10,13 @@ The dataset used with the IDC classifer is an open dataset: [Breast Histopatholo
 
 For **classification/inference** the project uses the **Intel® Movidius™ Neural Compute Stick**, a USB stick designed to accelerate computer vision on the edge. We use the **UP Squared** IoT development board for our IoT device in conjuction with the Movidius. 
 
-To read a technical article article about the IDC Classifier, please visit [Machine Learning and Mammography](https://software.intel.com/en-us/articles/machine-learning-and-mammography "Machine Learning and Mammography") on Intel AI Academy documentation.
+To read a technical article about the IDC Classifier, please visit [Machine Learning and Mammography](https://software.intel.com/en-us/articles/machine-learning-and-mammography "Machine Learning and Mammography") on Intel AI Academy documentation.
 
 ![Intel AI DevJam](images/ICML-AI-DevJam.jpg)
 
-The **Intel AI DevJam Demo** project, **Reducing False Negatives in the IDC Classifier**, provides the source codes and tutorials for setting up the project that was demonstrated at **Intel AI DevJam** at **ICML** (**International Conference on Machine Learning**) in **Sweden**, July 2018.
+The [IDC classifier UI project](https://www.kaggle.com "IDC classifier UI project") was created as part of my **Intel AI DevJam** && **International Conference on Machine Learning** (**ICML**) demo in **Sweden**, July 2018. The goal of this demo was to intentionally trick the classifier by using very similar, but opposite class images from a small set of testing data that I believe humans may have difficulty telling apart. The project was designed to catch **false negatives** as a way to reduce them, providing a safety net for incorrect classifications that could mean the difference between life and death.
 
-The **Intel® AI DevJam Demo GUI** uses a **Windows application** to communicate with a **facial recognition classifier** and an option of two classifiers trained to detect **Invasive Ductal Carcinoma (Breast cancer)** in **histology images**. The project combines the  [Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification "Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT") and [TASS Movidius Facenet Classifier](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "TASS Movidius Facenet Classifier") projects, along with some new improvements.
-
-The goal of this project is to intentionally try to trick the model by using very similar, but opposite class, images from a small set of testing data that I believe humans may have difficulty telling apart. A larger set of testing data is provided to compare how the model works on larger datasets. When **false negatives** are found we will attempt to find a way to reduce them, providing a safety net for incorrect classifications that could mean the difference between life and death.
+The **UI** uses a **Windows application** to communicate with a **facial recognition classifier** and classifiers trained to detect **Invasive Ductal Carcinoma (Breast cancer)** in **histology images**. The project combines the  [Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification "Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT") and [TASS Movidius Facenet Classifier](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "TASS Movidius Facenet Classifier") projects, along with some new improvements.
 
 # DISCLAIMER
 
