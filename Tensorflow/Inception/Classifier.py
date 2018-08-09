@@ -23,7 +23,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
-# Title:            IDC Classifier
+# Title:            Inception V3 IDC Classifier
 # Description:      Test classification of local IDC & facial recognition testing images.
 # Acknowledgements: Uses code from Intel movidius/ncsdk (https://github.com/movidius/ncsdk)
 # Last Modified:    2018-08-07
@@ -141,10 +141,65 @@ class Classifier():
         print("-- IDC Categories Loaded OK:", len(self.categories))
 
 Classifier = Classifier()
+FacenetHelpers = FacenetHelpers()
 
 def main(argv):
 
-    if argv[0] == "Inception":
+    if argv[0] == "Facenet":
+
+        Classifier.loadRequirements(argv[0])
+
+        humanStart = datetime.now()
+        clockStart = time.time()
+
+        print("-- FACENET TEST MODE STARTING ")
+        print("-- STARTED: ", humanStart)
+
+        validDir    = Classifier._configs["ClassifierSettings"]["NetworkPath"] + Classifier._configs["ClassifierSettings"]["ValidPath"]
+        testingDir  = Classifier._configs["ClassifierSettings"]["NetworkPath"] + Classifier._configs["ClassifierSettings"]["TestingPath"]
+
+        files = 0
+        identified = 0
+
+        for test in os.listdir(testingDir):
+            
+                if test.endswith('.jpg') or test.endswith('.jpeg') or test.endswith('.png') or test.endswith('.gif'):
+                    #print(testingDir+test)
+
+                    test_output = FacenetHelpers.infer(cv2.imread(testingDir+test), Classifier.fgraph)
+                    files = files + 1
+
+                    for valid in os.listdir(validDir):
+
+                            if valid.endswith('.jpg') or valid.endswith('.jpeg') or valid.endswith('.png') or valid.endswith('.gif'):
+
+                                valid_output = FacenetHelpers.infer(cv2.imread(validDir+valid), Classifier.fgraph)
+
+                                if (FacenetHelpers.match(valid_output, test_output)):
+                                    identified = identified + 1
+                                    print("-- MATCH "+test)
+                                    break
+                                else:
+                                    
+                                    print("-- NO MATCH")
+
+        humanEnd = datetime.now()
+        clockEnd = time.time()
+
+        print("")
+        print("-- FACENET TEST MODE ENDING")
+        print("-- ENDED: ", humanEnd)
+        print("-- TESTED: ", files)
+        print("-- IDENTIFIED: ", identified)
+        print("-- TIME(secs): {0}".format(clockEnd - clockStart))
+        print("")
+        print("!! SHUTTING DOWN !!")
+        print("")
+
+        Classifier.fgraph.DeallocateGraph()
+        Classifier.movidius.CloseDevice()
+
+    elif argv[0] == "Inception":
 
         Classifier.loadRequirements("IDC")
 
