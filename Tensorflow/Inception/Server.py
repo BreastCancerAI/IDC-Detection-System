@@ -2,7 +2,7 @@
 #
 # The MIT License (MIT)
 # 
-# IDC Classification Inception V3 Server
+# IDC Classification Inception V3 & Facenet Server
 # Copyright (C) 2018 Adam Milton-Barker (AdamMiltonBarker.com)
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
-# Title:         IDC Classification Inception V3 Server
+# Title:         IDC Classification Inception V3 & Facenet Server
 # Description:   Serves an API for classification of both IDC & facial recognition images.
 # Configuration: data/confs.json
 # Last Modified: 2018-08-09
@@ -68,7 +68,6 @@ class Server():
 
         self._configs = {}
         self.movidius = None
-        self.jumpwayClient = None
         self.cameraStream = None
         self.imagePath = None
 
