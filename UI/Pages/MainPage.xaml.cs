@@ -1,4 +1,4 @@
-﻿using IDC_Classifier_GUI.Classes;
+﻿using UI.Classes;
 
 
 
@@ -64,7 +64,7 @@ using Newtonsoft.Json.Linq;
  * THE SOFTWARE.
 */
 
-namespace IDC_Classifier_GUI
+namespace UI
 {
     /// <summary>
     /// IDC Classifier GUI homepage

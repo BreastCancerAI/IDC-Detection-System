@@ -3,7 +3,7 @@
   <Identity Name="e70be29d-ff74-46a7-b34d-5f42f031281a" Publisher="CN=AMiltonBarker" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="e70be29d-ff74-46a7-b34d-5f42f031281a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>IDC-Classifier-GUI</DisplayName>
+    <DisplayName>UI</DisplayName>
     <PublisherDisplayName>Adam Milton-Barker</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="IDC_Classifier_GUI.App">
-      <uap:VisualElements DisplayName="Intel AI DevJam IDC Classifier GUI Demo" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="IDC-Classifier-GUI" BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="Intel AI DevJam IDC Classifier GUI Demo" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="UI" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

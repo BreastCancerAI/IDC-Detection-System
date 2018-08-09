@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDC_Classifier_GUI
+namespace UI
 {
     class GlobalData
     {

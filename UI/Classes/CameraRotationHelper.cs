@@ -5,7 +5,7 @@ using Windows.Graphics.Display;
 using Windows.Media.Capture;
 using Windows.Storage.FileProperties;
 
-namespace IDC_Classifier_GUI
+namespace UI
 {
     class CameraRotationHelper
     {

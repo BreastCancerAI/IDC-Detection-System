@@ -2,7 +2,7 @@
 using Windows.Media.SpeechSynthesis;
 using Windows.UI.Xaml.Controls;
 
-namespace IDC_Classifier_GUI.Classes
+namespace UI.Classes
 {
     class Speech
     {

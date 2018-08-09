@@ -1,4 +1,4 @@
-﻿using IDC_Classifier_GUI.Classes;
+﻿using UI.Classes;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace IDC_Classifier_GUI
+namespace UI
 {
     /// <summary>
     /// Classification gallery
