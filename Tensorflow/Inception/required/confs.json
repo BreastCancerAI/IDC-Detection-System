@@ -46,7 +46,7 @@
 		"NetworkPath":"",
 		"InceptionImagePath":"data/idc/1/",
 		"InceptionThreshold": 0.80,
-		"InceptionGraph":"model/idc.graph",
+		"InceptionGraph":"model/tass.graph",
 		"InceptionGraphDevCloud":"model/idcdc.graph",
         "Graph":"model/tass.graph",
         "Dlib":"model/dlib/shape_predictor_68_face_landmarks.dat",
