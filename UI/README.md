@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The [IDC classifier UI project](https://github.com/BreastCancerAI/IDC-Classifier/IDC-Classifier-GUI "IDC classifier UI project") was created as part of my **Intel AI DevJam** && **International Conference on Machine Learning** (**ICML**) demo in **Sweden**, July 2018. The goal of this demo was to intentionally trick the classifier by using very similar, but opposite class images from a small set of testing data that I believe humans may have difficulty telling apart. The project was designed to catch **false negatives** as a way to reduce them, providing a safety net for incorrect classifications that could mean the difference between life and death.
+The [IDC classifier UI project](https://github.com/BreastCancerAI/IDC-Classifier/UI "IDC classifier UI project") was created as part of my **Intel AI DevJam** && **International Conference on Machine Learning** (**ICML**) demo in **Sweden**, July 2018. The goal of this demo was to intentionally trick the classifier by using very similar, but opposite class images from a small set of testing data that I believe humans may have difficulty telling apart. The project was designed to catch **false negatives** as a way to reduce them, providing a safety net for incorrect classifications that could mean the difference between life and death.
 
 The **GUI** uses a **Windows application** to communicate with a **facial recognition classifier** and classifiers trained to detect **Invasive Ductal Carcinoma (Breast cancer)** in **histology images**. The classifiers used in the project combine the  [Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/IDC-Classification "Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT") and [TASS Movidius Facenet Classifier](https://github.com/iotJumpway/IoT-JumpWay-Intel-Examples/tree/master/Intel-Movidius/TASS/Facenet "TASS Movidius Facenet Classifier") projects, along with some new improvements.
 
@@ -22,9 +22,9 @@ Make sure you have completed the following steps before continuing to configure 
 
 ![IDC Classifier Universal Windows Application](images/VS2017-Universal-Windows-App.jpg)
 
-You should have already downloaded the repository source code when you completed the[IDC classification API server](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/Tensorflow/Inception "IDC classification API server") setup. Navigate to **IDC-Classifier** and double click the **IDC-Classifier-GUI.sln** file to open the solution in **Visual Studio 2017**.
+You should have already downloaded the repository source code when you completed the[IDC classification API server](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/Tensorflow/Inception "IDC classification API server") setup. Navigate to **IDC-Classifier** and double click the **UI.sln** file to open the solution in **Visual Studio 2017**.
 
-You need the application to connect to the server you setup while following the **IDC Classifier** tutorial. Inside the [IDC Classifier GUI Classes folder](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/IDC-Classifier-GUI/Classes "IDC Classifier GUI Classes folder") you will find a file called [GlobalData.cs](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/IDC-Classifier-GUI/Classes/GlobalData.cs "GlobalData.cs"), in here you will find settings that you can use to connect to your IDC Classifier Server. When you start your IDC Classifier Server, the output will show you the IP/FQD and port number.
+You need the application to connect to the server you setup while following the **IDC Classifier** tutorial. Inside the [IDC Classifier GUI Classes folder](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/UI/Classes "IDC Classifier GUI Classes folder") you will find a file called [GlobalData.cs](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/UI/Classes/GlobalData.cs "GlobalData.cs"), in here you will find settings that you can use to connect to your IDC Classifier Server. When you start your IDC Classifier Server, the output will show you the IP/FQD and port number.
 
 ```
 class GlobalData
@@ -66,7 +66,7 @@ INFO:tensorflow:Final Streaming Accuracy: 0.8941
 
 ![Testing The Universal Windows Application](images/permissions.jpg)
 
-For this to work it is neccessary for you to have added your photo to the [Known Data](https://github.com/BreastCancerAI/IDC-Classifier/data/known "Known Data") folder of the [IDC Classifier](https://github.com/iotJumpway/IoT-JumpWay-Microsoft-Examples/tree/master/Intel-AI-DevJam-IDC/IDC-Classifier "IDC Classifier") folder. 
+For this to work it is neccessary for you to have added your photo to the [Known Data](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/Tensorflow/Inception/data/known "Known Data") folder of the [IDC Classifier](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/Tensorflow/Inception "IDC Classifier") folder. 
 
 Run the app and as the app starts up it will ask you for camera and microphone permissions (microphone is currently unused at this stage in development). Once you accept the permissions the camera should start up and display on the screen. 
 
@@ -82,7 +82,7 @@ Click on the **Classify All Images** button to begin the classification process.
 
 ## Inception V3 Results
 
-These results are from using the [AI DevJam Inception V3 IDC Classifier](https://github.com/BreastCancerAI/IDC-Classifier/Inception "AI DevJam Inception V3 IDC Classifier"). As mentioned the images were purposely chosen to challenge the model on false negatives and positives. Ideally there would be 0 of either, but the best case scenario with misclassification is false positives, as it would be better to incorrectly predict non cancerous as cancercerous than it would be to predict cancerous as non cancerous.
+These results are from using the [AI DevJam Inception V3 IDC Classifier](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/Tensorflow/Inception/ "AI DevJam Inception V3 IDC Classifier"). As mentioned the images were purposely chosen to challenge the model on false negatives and positives. Ideally there would be 0 of either, but the best case scenario with misclassification is false positives, as it would be better to incorrectly predict non cancerous as cancercerous than it would be to predict cancerous as non cancerous.
 
 The application has been set up to detect if a test classification is correct by checking for a string in file name to compare against the prediction. In this applications case, it will check negative predictions to see if the string **class0** exists in the file name, and for positive predictions it will check for **class1**, this felps to determine whether they are false negatives or false positives.
 
@@ -177,7 +177,7 @@ You can see the images that were incorrectly classified along with images from o
 
 ![Testing The Universal Windows Application](../IDC-Classifier/Inception/images/output.jpg)
 
-This was also tested using the [IDC Classifier Test Program](https://github.com/iotJumpway/IoT-JumpWay-Microsoft-Examples/blob/master/Intel-AI-DevJam-IDC/IDC-Classifier/Classifier.py "IDC Classifier Test Program") with the same outcome. It seems that similar to facial recognition, Inception V3 gets confused on similar images, this can be confirmed or not by testing larger datasets.
+This was also tested using the [IDC Classifier Test Program](https://github.com/BreastCancerAI/IDC-Classifier/tree/master/Tensorflow/Inception/Classifier.py "IDC Classifier Test Program") with the same outcome. It seems that similar to facial recognition, Inception V3 gets confused on similar images, this can be confirmed or not by testing larger datasets.
 
 ![Testing The Universal Windows Application](images/will-farrell-chad-smith.jpg)
 
@@ -411,7 +411,7 @@ Below you will find any features that will be implemented. Pull requests are wel
 
 ## Bugs/Issues
 
-Please feel free to create issues for bugs and general issues you come across whilst using this or any other iotJumpWay Microsoft repo issues: [IoT-JumpWay-Microsoft-Examples Github Issues](https://github.com/iotJumpway/IoT-JumpWay-Microsoft-Examples/issues "IoT-JumpWay-Microsoft-Examples Github Issues")
+Please feel free to create issues for bugs and general issues you come across whilst using this or any other BreastCancerAI repo issues: [BreastCancerAI Github Issues](https://github.com/BreastCancerAI/IDC-Classifier/issues "BreastCancerAI Github Issues")
 
 ## Known Bugs
 Below you will find all known bugs in the application. Each bug has a corresponding issue in the repo issues area. Pull requests are welcome.
@@ -420,5 +420,5 @@ Below you will find all known bugs in the application. Each bug has a correspond
 
 ## Contributors
 
-[![Adam Milton-Barker, Intel® Software Innovator](../../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
+[![Adam Milton-Barker, Intel® Software Innovator](../images/Intel-Software-Innovator.jpg)](https://github.com/AdamMiltonBarker)
 
