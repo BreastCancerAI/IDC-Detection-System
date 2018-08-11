@@ -115,11 +115,11 @@ class DataSorter():
 
         random.shuffle(self.trainingData)
         
-        self.DataSorter = lmdb.open(
+        trainer = lmdb.open(
             self._confs["ClassifierSettings"]["trainLMDB"], 
             map_size=int(1e12))
 
-        with self.DataSorter.begin(write=True) as i:
+        with trainer.begin(write=True) as i:
 
             count = 0
             for data in self.trainingData:
@@ -139,7 +139,7 @@ class DataSorter():
                     
                 count = count + 1
 
-        self.DataSorter.close()
+        trainer.close()
 
         print("DATA COUNT: "+str(count))
         print("")
@@ -149,11 +149,11 @@ class DataSorter():
 
         random.shuffle(self.validationData)
         
-        self.validator = lmdb.open(
+        validator = lmdb.open(
             self._confs["ClassifierSettings"]["validationLMDB"], 
             map_size=int(1e12))
 
-        with self.validator.begin(write=True) as i:
+        with validator.begin(write=True) as i:
 
             count = 0
             for data in self.validationData:
@@ -173,7 +173,7 @@ class DataSorter():
                     
                 count = count + 1
 
-        self.validator.close()
+        validator.close()
 
         print("DATA COUNT: "+str(count))
 
