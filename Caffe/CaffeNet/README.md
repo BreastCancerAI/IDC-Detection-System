@@ -10,7 +10,19 @@ For training a custom trained **CaffeNet model** for detecting **Invasive Ductal
 
 # Preparing Your IDC Training Data
 
-For this tutorial, I used a dataset from Kaggle ( [Breast Histopathology Images](https://www.kaggle.com/paultimothymooney/breast-histopathology-images "Breast Histopathology Images") ), but you are free to use any dataset you like. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be named with integers, I used 0 and 1 to represent positive and negative. In my training/testing I used 4400 positive and 4400 negative examples using 60% for training data, 20% for validation data and 20% for testing. The model gave an overall training accuracy of 0.8596 (See Training Results below) and an average confidence of 0.96 on correct identifications. The data provided is 50px x 50px, as CaffeNet use images of size 227px x 227px, the images are resized to 227px x 227px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
+For this tutorial, I used a dataset from **Kaggle** ( [Breast Histopathology Images](https://www.kaggle.com/paultimothymooney/breast-histopathology-images "Breast Histopathology Images") ), but you are free to use any dataset you like. Once you decide on your dataset you need to arrange your data into the **model/train** directory. Each subdirectory should be named with integers, I used 0 and 1 to represent positive and negative. In my training/testing I used 4400 positive and 4400 negative examples using 60% for training data, 20% for validation data and 20% for testing. The model gave an overall training accuracy of 0.8596 (See Training Results below) and an average confidence of 0.96 on correct identifications. The data provided is 50px x 50px, as CaffeNet use images of size 227px x 227px, the images are resized to 227px x 227px, ideally the images would be that size already so you may want to try different datasets and see how your results vary.
+
+# Intel AI DevCloud 
+
+This tutorial uses **Intel AI DevCloud** for training. Access is free and you can request access by visiting the [Intel AI DevCloud](https://software.intel.com/en-us/ai-academy/devcloud "Intel AI DevCloud") area on Intel's website. 
+
+# Cloning The Repo
+
+You will need to clone this repository to a location on your development terminal. Navigate to the directory you would like to download it to and issue the following commands.
+
+  $ git clone https://github.com/BreastCancerAI/IDC-Classifier.git
+
+Once you have the repo, you will need to find the files in this folder located in [BreastCancerAI/IDC-Classifier/Caffe/CaffeNet](https://github.com/BreastCancerAI/IDC-Classifier "BreastCancerAI/IDC-Classifier/Caffe/CaffeNet").
 
 # DISCLAIMER
 
