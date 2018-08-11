@@ -187,7 +187,7 @@ class Train():
 
         print("COMPUTING MEAN")
 
-        os.system('compute_image_mean -backend=lmdb  ' + self._confs["ClassifierSettings"]["trainLMDB"] + ' ' + self._confs["ClassifierSettings"]["proto"])
+        os.system('compute_image_mean -backend=lmdb ' + self._confs["ClassifierSettings"]["trainLMDB"] + ' ' + self._confs["ClassifierSettings"]["proto"])
 
         
 Train = Train()
