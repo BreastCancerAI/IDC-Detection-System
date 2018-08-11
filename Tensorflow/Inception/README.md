@@ -1,10 +1,10 @@
-# IDC Classifier
+# IDC Classifier Inception V3
 
 ![IDC Classifier](../../images/IDC-Classification.jpg)
 
 ## Introduction
 
-**IDC Classifier** uses **Tensorflow** & **Inception V3** to provide a way to train a neural network with labelled breast cancer histology images to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
+**IDC Classifier Inception V3** uses **Tensorflow** & **Inception V3** to provide a way to train a neural network with labelled breast cancer histology images to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
 
 For classification the project uses the **Intel® Movidius** and a custom trained **Inception V3 model** for detecting **Invasive Ductal Carcinoma (IDC)**.
 
