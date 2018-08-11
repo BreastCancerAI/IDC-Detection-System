@@ -42,7 +42,7 @@ Create a directory in the root of your Intel AI DevCloud account called **IDC-Cl
 
 ## Modify Paths In Prototxt Files
 
-Before you can train the model, you need to update the prototxt files in [IDC-Classifier/CaffeNet/model](https://github.com/BreastCancerAI/IDC-Classifier/Caffe/CaffeNet/model "IDC-Classifier/CaffeNet/model"). Search [IDC-Classifier/CaffeNet/model/solver.prototxt](https://github.com/BreastCancerAI/IDC-Classifier/Caffe/CaffeNet/model/solver.prototxt "IDC-Classifier/CaffeNet/model/solver.prototxt") and [IDC-Classifier/CaffeNet/model/train.prototxt](https://github.com/BreastCancerAI/IDC-Classifier/Caffe/CaffeNet/model/train.prototxt "IDC-Classifier/CaffeNet/model/train.prototxt") for the word **YourUser** and replace it with your AI DevCloud username.
+Before you can train the model, you need to update the prototxt files in [IDC-Classifier/CaffeNet/model](https://github.com/BreastCancerAI/IDC-Classifier/Caffe/CaffeNet/model "IDC-Classifier/CaffeNet/model"). Search [IDC-Classifier/CaffeNet/model/solver.prototxt](https://github.com/BreastCancerAI/IDC-Classifier/blob/master/Caffe/CaffeNet/model/solver.prototxt "IDC-Classifier/CaffeNet/model/solver.prototxt") and [IDC-Classifier/CaffeNet/model/train.prototxt](https://github.com/BreastCancerAI/IDC-Classifier/blob/master/Caffe/CaffeNet/model/train.prototxt "IDC-Classifier/CaffeNet/model/train.prototxt") for the word **YourUser** and replace it with your AI DevCloud username.
 
 ## Start Training
 
