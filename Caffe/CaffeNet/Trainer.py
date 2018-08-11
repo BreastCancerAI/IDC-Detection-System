@@ -2,7 +2,7 @@
 #
 # The MIT License (MIT)
 # 
-# IDC Classifier CaffeNet Trainer
+# IDC Classifier CaffeNet DataSorter
 # Copyright (C) 2018 Adam Milton-Barker (AdamMiltonBarker.com)
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,8 +23,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
-# Title:         IDC Classifier CaffeNet Trainer
-# Description:   Trains the IDC Classifier on a data set of your choice using Intel AI DevCloud.
+# Title:         IDC Classifier CaffeNet DataSorter
+# Description:   Sorts the data for the IDC Classifier.
 # Configuration: data/confs.json
 # Last Modified: 2018-08-09
 #
@@ -41,7 +41,7 @@ import numpy as np
 from caffe.proto import caffe_pb2
 from components.caffe import CaffeHelper
 
-class Train():
+class DataSorter():
     
     def __init__(self):
                 
@@ -58,15 +58,9 @@ class Train():
         
         with open('data/confs.json') as confs:
             self._confs = json.loads(confs.read())
-
-    def doIt(self):
         
         os.system('rm -rf  ' + self._confs["ClassifierSettings"]["trainLMDB"])
         os.system('rm -rf  ' + self._confs["ClassifierSettings"]["validationLMDB"])
-
-        self.sortData()
-        self.createLMDB()
-        self.computeMean()
 
     def sortData(self):
 
@@ -121,11 +115,11 @@ class Train():
 
         random.shuffle(self.trainingData)
         
-        self.trainer = lmdb.open(
+        self.DataSorter = lmdb.open(
             self._confs["ClassifierSettings"]["trainLMDB"], 
             map_size=int(1e12))
 
-        with self.trainer.begin(write=True) as i:
+        with self.DataSorter.begin(write=True) as i:
 
             count = 0
             for data in self.trainingData:
@@ -145,7 +139,7 @@ class Train():
                     
                 count = count + 1
 
-        self.trainer.close()
+        self.DataSorter.close()
 
         print("DATA COUNT: "+str(count))
         print("")
@@ -187,8 +181,10 @@ class Train():
 
         print("COMPUTING MEAN")
 
-        os.system('compute_image_mean -backend=lmdb ' + self._confs["ClassifierSettings"]["trainLMDB"] + ' ' + self._confs["ClassifierSettings"]["proto"])
+        os.system('compute_image_mean -backend=lmdb  ' + self._confs["ClassifierSettings"]["trainLMDB"] + ' ' + self._confs["ClassifierSettings"]["proto"])
 
         
-Train = Train()
-Train.doIt()
+DataSorter = DataSorter()
+DataSorter.sortData()
+DataSorter.createLMDB()
+DataSorter.computeMean()
