@@ -2,7 +2,7 @@
 #
 # The MIT License (MIT)
 # 
-# IDC Classifier CaffeNet DataSorter
+# IDC Classifier CaffeNet Trainer Data Sorter
 # Copyright (C) 2018 Adam Milton-Barker (AdamMiltonBarker.com)
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,8 +23,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
-# Title:         IDC Classifier CaffeNet DataSorter
-# Description:   Sorts the data for the IDC Classifier.
+# Title:         IDC Classifier CaffeNet Trainer Data Sorter
+# Description:   Sorts the data for the IDC Classifier training.
 # Configuration: data/confs.json
 # Last Modified: 2018-08-09
 #
@@ -41,7 +41,7 @@ import numpy as np
 from caffe.proto import caffe_pb2
 from components.caffe import CaffeHelper
 
-class DataSorter():
+class Trainer():
     
     def __init__(self):
                 
@@ -71,7 +71,7 @@ class DataSorter():
 
             path = os.path.join(self._confs["ClassifierSettings"]["dataset_dir"], dirName)
 
-            if os.path.isdir(path):
+            if os.path.isdir(path) && dirName ".ipynb_checkpoints":
 
                 self.classNames.append(path)
                 self.labels.write(dirName+"\n")
@@ -184,7 +184,7 @@ class DataSorter():
         os.system('compute_image_mean -backend=lmdb  ' + self._confs["ClassifierSettings"]["trainLMDB"] + ' ' + self._confs["ClassifierSettings"]["proto"])
 
         
-DataSorter = DataSorter()
-DataSorter.sortData()
-DataSorter.createLMDB()
-DataSorter.computeMean()
+Trainer = Trainer()
+Trainer.sortData()
+Trainer.createLMDB()
+Trainer.computeMean()
