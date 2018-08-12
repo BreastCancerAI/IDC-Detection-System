@@ -48,6 +48,38 @@ Before you can train the model, you need to update the prototxt files in [IDC-Cl
 
 Next you can complete the training process by following the steps in the Notebook: [IDC-Classifier/CaffeNet/Trainer.ipynb](https://github.com/BreastCancerAI/IDC-Classifier/blob/master/Caffe/CaffeNet/Trainer.ipynb "IDC-Classifier/CaffeNet/Trainer.ipynb").
 
+By following the training Notebook you will accomplish the following:
+
+- Sorting the data
+- Creating the LMDB databases for training and validation
+- Computing the mean of your training data
+- Training your model
+
+## Sorting The Data
+
+The first task of the training Notebook is to sort the training data. In the **Create DataSorter Job** section of the Notebook, we create a job script that will submit a job to run **Trainer.py** on the DevCloud.
+
+```
+%%%%writefilewritefil  IDC-Classifier-Trainer
+cd $PBS_O_WORKDIR
+echo "* Hello world from compute server `hostname` on the A.I. DevCloud!"
+echo "* The current directory is ${PWD}."
+echo "* Compute server's CPU model and number of logical CPUs:"
+lscpu | grep 'Model name\\|^CPU(s)'
+echo "* Python available to us:"
+export PATH=/glob/intel-python/python3/bin:$PATH;
+which python
+python --version 
+echo "* Starting IDC-Classifier-DataSorter job"
+echo "* This job sorts the data for the IDC Classifier"
+python Trainer.py
+sleep 10
+echo "*Adios"
+# Remember to have an empty line at the end of the file; otherwise the last command will not run
+```
+
+This job will use the **sortData**, **createLMDB** and **computeMean** functions of the **Trainer** class in **Trainer.py**. The final steps for training is to follow the steps in the **Create Training Job** section to complete the training of your model.
+
 # DISCLAIMER
 
 The purpose of the tutorial and source code for **IDC Classifier** is to help people learn how to create computer vision projects and for people interested in the medical use case evaluate if it may help them and to expand upon. Although the the program is fairly accurate in testing, this project is not meant to be an alternative for use instead of seeking professional help. I am a developer not a doctor or expert on cancer.

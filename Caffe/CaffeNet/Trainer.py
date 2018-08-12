@@ -71,7 +71,7 @@ class Trainer():
 
             path = os.path.join(self._confs["ClassifierSettings"]["dataset_dir"], dirName)
 
-            if os.path.isdir(path) && dirName ".ipynb_checkpoints":
+            if os.path.isdir(path) and dirName ".ipynb_checkpoints":
 
                 self.classNames.append(path)
                 self.labels.write(dirName+"\n")
