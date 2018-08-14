@@ -10,7 +10,7 @@ layer {
   transform_param {
     mirror: true
     crop_size: 227
-    mean_file: "/home/YourUser/IDC-Classifier/CaffeNet/model/mean.binaryproto"
+    mean_file: "/home/u13339/CaffeNet/model/mean.binaryproto"
   }
 # mean pixel / channel-wise mean instead of mean image
 #  transform_param {
@@ -21,7 +21,7 @@ layer {
 #    mirror: true
 #  }
   data_param {
-    source: "/home/YourUser/IDC-Classifier/CaffeNet/data/train_lmdb"
+    source: "/home/u13339/CaffeNet/data/train_lmdb"
     batch_size: 256
     backend: LMDB
   }
@@ -37,7 +37,7 @@ layer {
   transform_param {
     mirror: false
     crop_size: 227
-    mean_file: "/home/YourUser/IDC-Classifier/CaffeNet/model/mean.binaryproto"
+    mean_file: "/home/u13339/CaffeNet/model/mean.binaryproto"
   }
 # mean pixel / channel-wise mean instead of mean image
 #  transform_param {
@@ -48,7 +48,7 @@ layer {
 #    mirror: false
 #  }
   data_param {
-    source: "/home/YourUser/IDC-Classifier/CaffeNet/data/validation_lmdb"
+    source: "/home/u13339/CaffeNet/data/validation_lmdb"
     batch_size: 50
     backend: LMDB
   }
@@ -67,7 +67,7 @@ layer {
     decay_mult: 0
   }
   convolution_param {
-    num_output: 2
+    num_output: 96
     kernel_size: 11
     stride: 4
     weight_filler {
@@ -370,7 +370,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 1000
+    num_output: 2
     weight_filler {
       type: "gaussian"
       std: 0.01
