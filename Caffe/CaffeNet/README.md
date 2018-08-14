@@ -78,38 +78,7 @@ echo "*Adios"
 
 This job will use the **sortData**, **createLMDB** and **computeMean** functions of the **Trainer** class in **Trainer.py**. The final steps for training is to follow the steps in the **Create Training Job** section to complete the training of your model.
 
-**sortData** takes the **labels** and **dataset_dir** values that we define in **ClassiferSettings->labels** in **data/confs.json**, creates the labels file and appends the paths of all the training images in both classes to a list. The code for the **sortData** function is below:
-
-```
-    def sortData(self):
-
-        self.labels = open(self._confs["ClassifierSettings"]["labels"],"w")
-        self.labels.write("classes\n")
-
-        for dirName in os.listdir(self._confs["ClassifierSettings"]["dataset_dir"]):
-
-            path = os.path.join(self._confs["ClassifierSettings"]["dataset_dir"], dirName)
-
-            if os.path.isdir(path) and dirName is not ".ipynb_checkpoints":
-
-                self.classNames.append(path)
-                self.labels.write(dirName+"\n")
-        
-        self.labels.close()
-
-        for directory in self.classNames:
-
-            for filename in os.listdir(directory):
-
-                if filename.endswith('.jpg') or filename.endswith('.jpeg') or filename.endswith('.png') or filename.endswith('.gif'):
-
-                    path = os.path.join(directory, filename)
-                    self.trainData.append(path)
-
-                else:
-
-                    continue
-```
+**sortData** takes the **labels** and **dataset_dir** values that we define in **ClassiferSettings->labels** in **data/confs.json**, creates the labels file and appends the paths of all the training images in both classes to a list.
 
 ```
 I0811 14:31:52.189744 201571 solver.cpp:563] Test net output #0: accuracy = 1
