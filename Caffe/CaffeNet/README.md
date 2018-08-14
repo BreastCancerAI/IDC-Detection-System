@@ -80,6 +80,8 @@ This job will use the **sortData**, **createLMDB** and **computeMean** functions
 
 **sortData** takes the **labels** and **dataset_dir** values that we define in **ClassiferSettings->labels** in **data/confs.json**, creates the labels file and appends the paths of all the training images in both classes to a list.
 
+**createLMDB** first splits the data into **train**, **validation** and **test** sets, then creates the **Lightning Memory-Mapped Database** (LMDB) for both train and validation.  
+
 ```
 I0811 14:31:52.189744 201571 solver.cpp:563] Test net output #0: accuracy = 1
 I0811 14:31:52.189800 201571 solver.cpp:563] Test net output #1: loss = 0.172313 (* 1 = 0.172313 loss)
