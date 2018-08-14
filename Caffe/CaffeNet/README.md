@@ -95,6 +95,7 @@ Now you will need to install the **NCSDK** on your development device, this will
  $ mkdir -p ~/workspace
  $ cd ~/workspace
  $ mkdir IDC && cd IDC && mkdir model
+ $ cd ~/workspace
  $ git clone https://github.com/movidius/ncsdk.git
  $ cd ~/workspace/ncsdk
  $ make install
