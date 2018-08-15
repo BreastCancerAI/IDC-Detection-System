@@ -6,6 +6,8 @@
 
 **IDC Classifier CaffeNet** uses **Caffe** (**CaffeNet**) to provide a way to train a neural network with labelled **breast cancer histology images** to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
 
+![UP2](../../images/UP2.jpg)
+
 For training a custom trained **CaffeNet model** for detecting **Invasive Ductal Carcinoma (IDC)** trained on the **Intel AI DevCloud** is used and for classification the project uses the **Intel® Movidius**.
 
 # Intel AI DevCloud 
@@ -76,11 +78,15 @@ echo "*Adios"
 # Remember to have an empty line at the end of the file; otherwise the last command will not run
 ```
 
-This job will use the **sortData**, **createLMDB** and **computeMean** functions of the **Trainer** class in **Trainer.py**. The final steps for training is to follow the steps in the **Create Training Job** section to complete the training of your model.
+This job will use the **sortData**, **createLMDB** and **computeMean** functions of the **Trainer** class in **Trainer.py**. 
 
 **sortData** takes the **labels** and **dataset_dir** values that we define in **ClassiferSettings->labels** in **data/confs.json**, creates the labels file and appends the paths of all the training images in both classes to a list.
 
 **createLMDB** first splits the data into **train**, **validation** and **test** sets, then creates the **Lightning Memory-Mapped Database** (LMDB) for both train and validation. The LMDB is a high performance database that we store Datum Objects storing labelled data, the labels must be ints so class directories must be named with an int, 0 upwards, in this project 0 represents IDC negative and 1 represents IDC positive. 
+
+The final steps for training is to follow the steps in the **Create Training Job** section to complete the training of your model.
+
+
 
 ```
 I0811 14:31:52.189744 201571 solver.cpp:563] Test net output #0: accuracy = 1
@@ -119,6 +125,16 @@ Now continue with the commands below to clone NCAppZoo, setup stream infer and c
 ```
 
 The above command will copy all of the files from the **stream_infer directory** to the **model** directory inside **workspace/IDC**. 
+
+# Compiling the graph for Movidius
+
+Now we are going to take the CaffeNet model we trained and convert the graph to a graph that is compatible with Movidius. Navigate to the **workspace/IDC/model** on your development machine and make sure your have your NCS plugged in then execute the following commands from the model directory in terminal:
+
+```
+ $ mvNCCompile deploy.prototxt -w model_iter_5000.caffemodel -o CaffeNetGraph
+```
+
+This will save the Movidius compatible graph, **CaffeNetGraph**, to the **model** directory in the IDC Classifier project root.
 
 # DISCLAIMER
 
