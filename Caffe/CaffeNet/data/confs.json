@@ -1,0 +1,29 @@
+{
+	"IoTJumpWay": {
+		"Location": 0,
+		"Zone": 0,
+		"Device": 0,
+		"DeviceName" : "",
+		"App": 0
+	},
+		"Actuators": {},
+		"Cameras": [],
+		"Sensors": {},
+		"IoTJumpWayMQTT": {
+		"MQTTUsername": "",
+		"MQTTPassword": ""
+	},
+	"ClassifierSettings":{
+		"dataset_dir":"data/train/",
+		"imageWidth": 227,
+		"imageHeight": 227,
+		"trainLMDB": "data/train_lmdb",
+		"validationLMDB": "data/validation_lmdb",
+		"proto": "data/mean.binaryproto",
+		"labels": "data/label.txt",
+		"model": "model/",
+		"trainCut": 60,
+		"validationCut": 20,
+		"testCut": 20
+	}
+}
