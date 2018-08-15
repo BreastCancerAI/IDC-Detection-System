@@ -6,9 +6,9 @@
 
 **IDC Classifier CaffeNet** uses **Caffe** (**CaffeNet**) to provide a way to train a neural network with labelled **breast cancer histology images** to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
 
-![UP2](../../images/UP2.jpg)
-
 For training a custom trained **CaffeNet model** for detecting **Invasive Ductal Carcinoma (IDC)** trained on the **Intel AI DevCloud** is used and for classification the project uses the **Intel® Movidius**.
+
+![UP2](../../images/UP2.jpg)
 
 # Intel AI DevCloud 
 
