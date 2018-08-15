@@ -136,7 +136,24 @@ Now we are going to take the CaffeNet model we trained and convert the graph to 
 
 This will save the Movidius compatible graph, **CaffeNetGraph**, to the **workspace/IDC/model** directory on your development machine. You should copy this file to the **BreastCancerAI/IDC-Classifier/Caffe/CaffeNet/model** directory on either you development machine or your **UP2 / Rasperry Pi 3** if using the optional guide below.
 
+## (OPTIONAL) Install NCSDK On Your UP Squared / Raspberry Pi 3
 
+If you would like to use the IDC Classifier on the edge, this tutorial has been tested on the **UP2** and the **Raspberry Pi**. You can install the **NCSDK** on your **UP Squared** / **Raspberry Pi 3** device, this will be used by the classifier to carry out inference on local images or images received via the API we will create. Make sure you have the Movidius plugged in to the edge device and follow the guide below:
+
+```
+ $ mkdir -p ~/workspace
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncsdk.git
+ $ cd ~/workspace/ncsdk/api/src
+ $ make
+ $ sudo make install
+```
+```
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncappzoo
+ $ cd ncappzoo/apps/hello_ncs_py
+ $ python3 hello_ncs.py
+```
 
 # DISCLAIMER
 
