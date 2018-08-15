@@ -6,9 +6,9 @@
 
 **IDC Classifier CaffeNet** uses **Caffe** (**CaffeNet**) to provide a way to train a neural network with labelled **breast cancer histology images** to detect **Invasive Ductal Carcinoma (IDC)** in unseen/unlabelled images.
 
-![UP2](../../images/UP2.jpg)
-
 For training a custom trained **CaffeNet model** for detecting **Invasive Ductal Carcinoma (IDC)** trained on the **Intel AI DevCloud** is used and for classification the project uses the **Intel® Movidius**.
+
+![UP2](../../images/UP2.jpg)
 
 # Intel AI DevCloud 
 
@@ -115,7 +115,7 @@ Now you need to download the contents of the **model** directory on AI DevCloud 
 
 # Clone NCAppZoo
 
-Now continue with the commands below to clone NCAppZoo, setup stream infer and convert your model trained with Caffe to a graph that is compatible with the Movidius:
+Now continue with the commands below to clone **NCAppZoo**, setup **stream infer** and convert your model trained with Caffe to a graph that is compatible with the Movidius:
 
 ```
  $ cd ~/workspace
@@ -134,7 +134,26 @@ Now we are going to take the CaffeNet model we trained and convert the graph to 
  $ mvNCCompile deploy.prototxt -w model_iter_5000.caffemodel -o CaffeNetGraph
 ```
 
-This will save the Movidius compatible graph, **CaffeNetGraph**, to the **model** directory in the IDC Classifier project root.
+This will save the Movidius compatible graph, **CaffeNetGraph**, to the **workspace/IDC/model** directory on your development machine. You should copy this file to the **BreastCancerAI/IDC-Classifier/Caffe/CaffeNet/model** directory on either you development machine or your **UP2 / Rasperry Pi 3** if using the optional guide below.
+
+## (OPTIONAL) Install NCSDK On Your UP Squared / Raspberry Pi 3
+
+If you would like to use the IDC Classifier on the edge, this tutorial has been tested on the **UP2** and the **Raspberry Pi**. You can install the **NCSDK** on your **UP Squared** / **Raspberry Pi 3** device, this will be used by the classifier to carry out inference on local images or images received via the API we will create. Make sure you have the Movidius plugged in to the edge device and follow the guide below:
+
+```
+ $ mkdir -p ~/workspace
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncsdk.git
+ $ cd ~/workspace/ncsdk/api/src
+ $ make
+ $ sudo make install
+```
+```
+ $ cd ~/workspace
+ $ git clone https://github.com/movidius/ncappzoo
+ $ cd ncappzoo/apps/hello_ncs_py
+ $ python3 hello_ncs.py
+```
 
 # DISCLAIMER
 
