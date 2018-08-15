@@ -115,7 +115,7 @@ Now you need to download the contents of the **model** directory on AI DevCloud 
 
 # Clone NCAppZoo
 
-Now continue with the commands below to clone NCAppZoo, setup stream infer and convert your model trained with Caffe to a graph that is compatible with the Movidius:
+Now continue with the commands below to clone **NCAppZoo**, setup **stream infer** and convert your model trained with Caffe to a graph that is compatible with the Movidius:
 
 ```
  $ cd ~/workspace
@@ -134,7 +134,9 @@ Now we are going to take the CaffeNet model we trained and convert the graph to 
  $ mvNCCompile deploy.prototxt -w model_iter_5000.caffemodel -o CaffeNetGraph
 ```
 
-This will save the Movidius compatible graph, **CaffeNetGraph**, to the **model** directory in the IDC Classifier project root.
+This will save the Movidius compatible graph, **CaffeNetGraph**, to the **workspace/IDC/model** directory on your development machine. You should copy this file to the **BreastCancerAI/IDC-Classifier/Caffe/CaffeNet/model** directory on either you development machine or your **UP2 / Rasperry Pi 3** if using the optional guide below.
+
+
 
 # DISCLAIMER
 
