@@ -2,7 +2,7 @@
 #
 # The MIT License (MIT)
 # 
-# IDC Classifier CaffeNet Trainer Data Sorter
+# IDC Classifier CaffeNet Trainer
 # Copyright (C) 2018 Adam Milton-Barker (AdamMiltonBarker.com)
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,9 +23,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
-# Title:         IDC Classifier CaffeNet Trainer Data Sorter
+# Title:         IDC Classifier CaffeNet Trainer
 # Description:   Sorts the data for the IDC Classifier training.
-# Configuration: data/confs.json
+# Configuration: required/confs.json
 # Last Modified: 2018-08-09
 #
 # Example Usage:
@@ -56,7 +56,7 @@ class Trainer():
 
         self.CaffeHelper = CaffeHelper()
         
-        with open('data/confs.json') as confs:
+        with open('required/confs.json') as confs:
             self._confs = json.loads(confs.read())
         
         os.system('rm -rf  ' + self._confs["ClassifierSettings"]["trainLMDB"])
