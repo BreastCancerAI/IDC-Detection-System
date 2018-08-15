@@ -8,8 +8,6 @@
 
 For training a custom trained **CaffeNet model** for detecting **Invasive Ductal Carcinoma (IDC)** trained on the **Intel AI DevCloud** is used and for classification the project uses the **Intel® Movidius**.
 
-![UP2](../../images/UP2.jpg)
-
 # Intel AI DevCloud 
 
 This tutorial uses **Intel AI DevCloud** for training. Access is free and you can request access by visiting the [Intel AI DevCloud](https://software.intel.com/en-us/ai-academy/devcloud "Intel AI DevCloud") area on Intel's website. 
@@ -80,13 +78,11 @@ echo "*Adios"
 
 This job will use the **sortData**, **createLMDB** and **computeMean** functions of the **Trainer** class in **Trainer.py**. 
 
-**sortData** takes the **labels** and **dataset_dir** values that we define in **ClassiferSettings->labels** in **data/confs.json**, creates the labels file and appends the paths of all the training images in both classes to a list.
+**sortData** takes the **labels** and **dataset_dir** values that we define in **ClassiferSettings->labels** in **required/confs.json**, creates the labels file and appends the paths of all the training images in both classes to a list.
 
 **createLMDB** first splits the data into **train**, **validation** and **test** sets, then creates the **Lightning Memory-Mapped Database** (LMDB) for both train and validation. The LMDB is a high performance database that we store Datum Objects storing labelled data, the labels must be ints so class directories must be named with an int, 0 upwards, in this project 0 represents IDC negative and 1 represents IDC positive. 
 
 The final steps for training is to follow the steps in the **Create Training Job** section to complete the training of your model.
-
-
 
 ```
 I0811 14:31:52.189744 201571 solver.cpp:563] Test net output #0: accuracy = 1
@@ -137,6 +133,8 @@ Now we are going to take the CaffeNet model we trained and convert the graph to 
 This will save the Movidius compatible graph, **CaffeNetGraph**, to the **workspace/IDC/model** directory on your development machine. You should copy this file to the **BreastCancerAI/IDC-Classifier/Caffe/CaffeNet/model** directory on either you development machine or your **UP2 / Rasperry Pi 3** if using the optional guide below.
 
 ## (OPTIONAL) Install NCSDK On Your UP Squared / Raspberry Pi 3
+
+![UP2](../../images/UP2.jpg)
 
 If you would like to use the IDC Classifier on the edge, this tutorial has been tested on the **UP2** and the **Raspberry Pi**. You can install the **NCSDK** on your **UP Squared** / **Raspberry Pi 3** device, this will be used by the classifier to carry out inference on local images or images received via the API we will create. Make sure you have the Movidius plugged in to the edge device and follow the guide below:
 

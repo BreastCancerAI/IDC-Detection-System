@@ -14,14 +14,16 @@
 		"MQTTPassword": ""
 	},
 	"ClassifierSettings":{
+		"NetworkPath":"",
 		"dataset_dir":"data/train/",
 		"imageWidth": 227,
 		"imageHeight": 227,
 		"trainLMDB": "data/train_lmdb",
 		"validationLMDB": "data/validation_lmdb",
 		"proto": "data/mean.binaryproto",
-		"labels": "data/label.txt",
+		"labels": "model/label.txt",
 		"model": "model/",
+		"CaffeNetGraph": "model/CaffeNetGraph",
 		"trainCut": 60,
 		"validationCut": 20,
 		"testCut": 20
